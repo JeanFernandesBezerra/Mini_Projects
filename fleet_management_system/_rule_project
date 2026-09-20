@@ -1,0 +1,44 @@
+Challenge: Fleet Management System
+Develop a system for a vehicle rental agency where the user can register different types of vehicles via the command line and view their information.
+The application must store records in memory while running.
+
+1. Structure and the 4 Pillars of OOP
+Abstraction: Create an abstract class named `Veiculo` (Vehicle). It must define the foundation for any vehicle, including an abstract method `calcularValorAluguel(int dias)` that requires subclasses to implement their own pricing logic.
+
+Encapsulation: In the `Veiculo` class, define attributes such as `marca` (String), `modelo` (String), `ano` (int), and `valorDiariaBase` (double) using the `private` modifier.
+Access to and modification of this data must occur only via Getters and Setters. Implement a business rule in the `setAno()` method to reject registration if the year is less than 1990.
+
+Inheritance: Create two subclasses: `Carro` (Car) and `Caminhao` (Truck). Both must inherit from `Veiculo` to reuse the base attributes. The `Carro` class adds a specific attribute `quantidadePortas` (int), and the `Caminhao` class adds `capacidadeCargaTons` (double).
+
+Polymorphism: Override the `calcularValorAluguel(int dias)` method in both subclasses, applying different calculation logic:
+
+For `Carro`, the final cost is simply `valorDiariaBase * dias`.
+
+For `Caminhao`, the cost includes a road wear-and-tear fee: `(valorDiariaBase * dias) + (capacidadeCargaTons * 50.0)`.
+
+Also, override a method named `exibirDetalhes()` to print the characteristics that differ between the two subclasses.
+
+2. Console-based Data Input
+Create a `Main` class containing a loop and logic to capture keyboard input (using classes like `Scanner` if using Java). The program must display the following interactive menu:
+
+Interactive Menu:
+
+Register new Car
+
+Register new Truck
+
+List all vehicles and simulate rental
+
+Exit
+
+Execution Rules:
+
+Options 1 and 2 (Registration): The system must ask sequential questions in the terminal (e.g., "Enter the make:", "Enter the year:", "Enter the load capacity:").
+After capturing all inputs, the system must instantiate the corresponding object using a constructor that accepts these variables.
+
+Storage: Save the newly created objects in a single generic list based on the parent class type (e.g., `List<Veiculo> frota`).
+This ensures you are using polymorphism to group different subclasses within the same repository.
+
+Option 3 (Listing): The program must prompt: "For how many days do you wish to simulate the rental?".
+Then, it must iterate over the list of vehicles, calling the `exibirDetalhes()` method and the `calcularValorAluguel(dias)`
+method for each item, demonstrating polymorphic behavior at runtime.

@@ -1,0 +1,24 @@
+STUDY OBJECTIVE
+To better understand how to use OOP by applying its four pillars: Abstraction, Encapsulation, Inheritance, and Polymorphism.
+
+MINI-PROJECT OBJECTIVE
+To create any number of cars or trucks (with the flexibility to easily add new vehicle classes) and list all registered vehicles along with a rental simulation.
+
+HOW IT WORKS
+
+Vehicle: It acts as a blueprint for each vehicle, serving as the abstract Parent Class.
+
+Cars: A Child Class used to define the specific rules and attributes for cars.
+
+Trucks: A Child Class used to define the specific rules and attributes for trucks.
+
+FleetManager: The class responsible for managing the array of registered vehicles. It handles the manual dynamic expansion of the array, adds new vehicles, and displays the fleet list.
+
+Main: The class responsible for interacting with the user, collecting inputs, and handling validations.
+
+HOW TO RUN
+Run the Main class and type a number between 1 and 4 in the console:
+1 - Register a new car
+2 - Register a new truck
+3 - List all registered vehicles and simulate rental values
+4 - Quit the application
